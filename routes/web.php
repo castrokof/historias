@@ -25,8 +25,8 @@ Route::get('seguridad/login', 'Seguridad\LoginController@index')->name('login');
 Route::post('seguridad/login', 'Seguridad\LoginController@login')->name('login_post');
 Route::get('seguridad/logout', 'Seguridad\LoginController@logout')->name('logout');
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'superadmin']], function () {
-     
-     
+
+
      /* RUTAS DEL MENU */
      Route::get('menu', 'MenuController@index')->name('menu');
      Route::get('menu/crear', 'MenuController@crear')->name('crear_menu');
@@ -35,7 +35,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
      Route::post('menu', 'MenuController@guardar')->name('guardar_menu');
      Route::post('menu/guardar-orden', 'MenuController@guardarOrden')->name('guardar_orden');
      Route::get('rol/{id}/elimniar', 'MenuController@eliminar')->name('eliminar_menu');
-    
+
      /* RUTAS DEL ROL */
      Route::get('rol', 'RolController@index')->name('rol');
      Route::get('rol/crear', 'RolController@crear')->name('crear_rol');
@@ -43,11 +43,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
      Route::get('rol/{id}/editar', 'RolController@editar')->name('editar_rol');
      Route::put('rol/{id}', 'RolController@actualizar')->name('actualizar_rol');
      Route::delete('rol/{id}', 'RolController@eliminar')->name('eliminar_rol');
-    
+
      /* RUTAS DEL MENUROL */
      Route::get('menu-rol', 'MenuRolController@index')->name('menu_rol');
      Route::post('menu-rol', 'MenuRolController@guardar')->name('guardar_menu_rol');
-     
+
      /* RUTAS DE LA EMPRESA */
      Route::get('empresa', 'EmpresaController@index')->name('empresa');
      Route::get('empresa/crear', 'EmpresaController@crear')->name('crear_empresa');
@@ -62,13 +62,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
      Route::get('permiso/{id}/editar', 'PermisoController@editar')->name('editar_permiso');
      Route::put('permiso/{id}', 'PermisoController@actualizar')->name('actualizar_permiso');
      Route::delete('permiso/{id}', 'PermisoController@eliminar')->name('eliminar_permiso');
-     
+
      /* RUTAS DEL PERMISOROL */
      Route::get('permiso-rol', 'PermisoRolController@index')->name('permiso_rol');
      Route::post('permiso-rol', 'PermisoRolController@guardar')->name('guardar_permiso_rol');
 
 
-   
+
 });
 
 
@@ -152,8 +152,8 @@ Route::get('marca/crear', 'MarcasController@crear')->name('crear_marca')->middle
 Route::post('marca', 'MarcasController@guardar')->name('guardar_marca')->middleware('superEditor');
 Route::get('marca/{id}/editar', 'MarcasController@editar')->name('editar_marca')->middleware('superEditor');
 Route::put('marca/{id}', 'MarcasController@actualizar')->name('actualizar_marca')->middleware('superEditor');
-    
-   
+
+
 });
 
 Route::group(['middleware' => ['auth','superEditor']], function () {

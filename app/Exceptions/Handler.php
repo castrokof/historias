@@ -4,6 +4,11 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+<<<<<<< Updated upstream
+=======
+
+use Throwable;
+>>>>>>> Stashed changes
 
 class Handler extends ExceptionHandler
 {
@@ -48,6 +53,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+<<<<<<< Updated upstream
         return parent::render($request, $exception);
     }
+=======
+
+
+        return parent::render($request, $exception);
+    }
+
+
+
+>>>>>>> Stashed changes
 }

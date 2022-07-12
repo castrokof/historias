@@ -31,6 +31,13 @@ class DatabaseSeeder extends Seeder
     
             $this->call(RolTablaSeeder::class);
             $this->call(UsuarioAdministradorSeeder::class);
+<<<<<<< Updated upstream
+=======
+            $this->call(cie10Seeder::class);
+            $this->call(cumsSeeder::class);
+             //$this->call(PacientesSeeder::class);
+            // $this->call(cupsSeeder::class);
+>>>>>>> Stashed changes
     }
 
     protected function truncateTablas(array $tablas){
